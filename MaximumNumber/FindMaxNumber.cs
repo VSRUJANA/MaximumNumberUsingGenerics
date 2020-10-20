@@ -30,8 +30,6 @@ namespace MaximumNumber
                 System.Environment.Exit(0);
                 return 0;
             }
-            
         }
-
     }
 }

@@ -11,8 +11,8 @@ namespace MaximumNumber
             int i1 = int.Parse(Console.ReadLine());
             int i2 = int.Parse(Console.ReadLine());
             int i3 = int.Parse(Console.ReadLine());
-            int output = FindMaxNumber.MaximumIntegerNumber(i1,i2,i3);
-            Console.WriteLine("Maximum Integer among "+i1+","+i2+ "," + i3+ " : "+output);
+            int output = FindMaxNumber.MaximumIntegerNumber(i1, i2, i3);
+            Console.WriteLine("Maximum Integer among " + i1 + "," + i2 + "," + i3 + " : " + output);
         }
     }
 }
