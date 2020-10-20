@@ -20,6 +20,13 @@ namespace MaximumNumber
             float f3 = float.Parse(Console.ReadLine());
             float output2 = FindMaxNumber.MaximumFloatNumber(f1, f2, f3);
             Console.WriteLine("Maximum float number among " + f1 + "," + f2 + "," + f3 + " : " + output2);
+            
+            Console.WriteLine("Enter 3 Strings");
+            string s1 = Console.ReadLine();
+            string s2 = Console.ReadLine();
+            string s3 = Console.ReadLine();
+            string output3 = FindMaxNumber.MaximumString(s1, s2, s3);
+            Console.WriteLine("Maximum String among " + s1 + ", " + s2 + ", " + s3 + " : " + output3);
         }
     }
 }
