@@ -69,5 +69,38 @@ namespace MaxNumberTest
             float expected = num3;
             Assert.AreEqual(expected, result);
         }
+
+        //Test methods for MaximumString method
+
+        [TestMethod]
+        [DataRow("9", "4", "1")]
+        [DataRow("413", "312", "101")]
+        public void Given_Max_String_At_First_Position_Return_Max(string num1, string num2, string num3)
+        {
+            string result = FindMaxNumber.MaximumString(num1, num2, num3);
+            string expected = num1;
+            Assert.AreEqual(expected, result);
+        }
+
+        [TestMethod]
+        [DataRow("1", "93", "8")]
+        [DataRow("143", "65", "11")]
+        public void Given_Max_String_At_Second_Position_Return_Max(string num1, string num2, string num3)
+        {
+            string result = FindMaxNumber.MaximumString(num1, num2, num3);
+            string expected = num2;
+            Assert.AreEqual(expected, result);
+        }
+
+        [TestMethod]
+        [DataRow("9", "4", "93")]
+        [DataRow("43", "32", "58")]
+        public void Given_Max_String_At_Third_Position_Return_Max(string num1, string num2, string num3)
+        {
+            string result = FindMaxNumber.MaximumString(num1, num2, num3);
+            string expected = num3;
+            Assert.AreEqual(expected, result);
+        }
+
     }
 }
