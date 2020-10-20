@@ -6,7 +6,7 @@ namespace MaximumNumber
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Welcome to find Maximum number Program!");
+            Console.WriteLine("Welcome to find Maximum number Program! ");
         }
     }
 }
