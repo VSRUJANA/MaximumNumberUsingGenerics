@@ -102,16 +102,16 @@ namespace MaxNumberTest
             Assert.AreEqual(expected, result);
         }
 
-        //Test methods for Generic method
-       
+        //Test methods for Generic method with 3 parameters
+
         [TestMethod]
         [DataRow(9, 14, 8)]
         [DataRow(65, 99, 74)]
         public void GivenMaxValueAtSecondPlace_GenericMethodForInt_ShouldReturnSecondValue(int num1, int num2, int num3)
         {
-            GenericMaxCheck<int> generic = new GenericMaxCheck<int>(num1, num2, num3);
+            GenericMaxCheck<int> generic = new GenericMaxCheck<int>(new int[3] { num1, num2, num3 });
             int expected = num2;
-            int actual = generic.MaximumCheck();
+            int actual = generic.MaxMethod();
             Assert.AreEqual(expected, actual);
         }
 
@@ -120,9 +120,9 @@ namespace MaxNumberTest
         [DataRow(65.36F, 9.56F, 74.56F)]
         public void GivenMaxValueAtThirdPlace_GenericMethodForFloat_ShouldReturnThirdValue(float num1, float num2, float num3)
         {
-            GenericMaxCheck<float> generic = new GenericMaxCheck<float>(num1, num2, num3);
+            GenericMaxCheck<float> generic = new GenericMaxCheck<float>(new float[3] { num1, num2, num3 });
             float expected = num3;
-            float actual = generic.MaximumCheck();
+            float actual = generic.MaxMethod();
             Assert.AreEqual(expected, actual);
         }
 
@@ -132,9 +132,38 @@ namespace MaxNumberTest
         public void GivenMaxValueAtFirstPlace_GenericMethodForString_ShouldReturnFirstValue(string num1, string num2, string num3)
         {
 
-            GenericMaxCheck<string> generic = new GenericMaxCheck<string>(num1, num2, num3);
+            GenericMaxCheck<string> generic = new GenericMaxCheck<string>(new string[3] { num1, num2, num3 });
             string expected = num3;
-            string actual = generic.MaximumCheck();
+            string actual = generic.MaxMethod();
+            Assert.AreEqual(expected, actual);
+        }
+
+        //Test cases for Generic method with more than 3 parameters
+
+        [TestMethod]
+        public void GivenIntArray_WhenCheckedInGenericMaximumCheck_ShouldReturnMaxValue()
+        {
+            int expected = 101;
+            GenericMaxCheck<int> generic = new GenericMaxCheck<int>(new int[6] { 98, 65, 95, 75, 68, 101 });
+            int actual = generic.MaxMethod();
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void GivenFloatArray_WhenCheckedInGenericMaximumCheck_ShouldReturnMaxValue()
+        {
+            GenericMaxCheck<float> generic = new GenericMaxCheck<float>(new float[4] { 8.5F, 98.5F, 75.84F, 76.9F });
+            float expected = 98.5F;
+            float actual = generic.MaxMethod();
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void GivenStringArray_WhenCheckedInGenericMaximumCheck_ShouldReturnMaxValue()
+        {
+            string expected = "777";
+            GenericMaxCheck<string> generic = new GenericMaxCheck<string>(new string[5] { "111", "222", "333", "444", "777" });
+            string actual = generic.MaxMethod();
             Assert.AreEqual(expected, actual);
         }
     }

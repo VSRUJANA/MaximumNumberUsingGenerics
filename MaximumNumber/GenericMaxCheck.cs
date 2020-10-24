@@ -6,54 +6,33 @@ namespace MaximumNumber
 {
     public class GenericMaxCheck<T> where T : IComparable
     {
-        public T firstValue;
-        public T secondValue;
-        public T thirdValue;
-
-        public GenericMaxCheck(T firstValue, T secondValue, T thirdValue)
+        public T[] value;
+        public GenericMaxCheck(T[] value)
         {
-            this.firstValue = firstValue;
-            this.secondValue = secondValue;
-            this.thirdValue = thirdValue;
+            this.value = value;
         }
 
-        //Generic method to find Maximum
-        public T MaximumCheck()
+        public T[] Sort(T[] values)
         {
-            try
-            {
-                if (firstValue.CompareTo(secondValue) > 0 && firstValue.CompareTo(thirdValue) > 0 ||
-                    firstValue.CompareTo(secondValue) >= 0 && firstValue.CompareTo(thirdValue) > 0 ||
-                    firstValue.CompareTo(secondValue) > 0 && firstValue.CompareTo(thirdValue) >= 0)
-                {
-                    return this.firstValue;
-                }
-                if (secondValue.CompareTo(firstValue) > 0 && secondValue.CompareTo(thirdValue) > 0 ||
-                    secondValue.CompareTo(firstValue) >= 0 && secondValue.CompareTo(thirdValue) > 0 ||
-                    secondValue.CompareTo(firstValue) > 0 && secondValue.CompareTo(thirdValue) >= 0)
-                {
-                    return this.secondValue;
-                }
-                if (thirdValue.CompareTo(secondValue) > 0 && thirdValue.CompareTo(firstValue) > 0 ||
-                    thirdValue.CompareTo(secondValue) >= 0 && thirdValue.CompareTo(firstValue) > 0 ||
-                    thirdValue.CompareTo(secondValue) > 0 && thirdValue.CompareTo(firstValue) >= 0)
-                {
-                    return this.thirdValue;
-                }
-                throw new Exception("first value,second value and third value are same");
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e.Message);
-                System.Environment.Exit(0);
-                return this.firstValue;
-            }
+            Array.Sort(values);
+            return values;
+        }
+        void add(params int[] a)
+        {
+
+        }
+        public T MaxValue(params T[] values)
+        {
+            var sorted_values = Sort(values);
+
+            return sorted_values[sorted_values.Length - 1];
         }
 
-        public void PrintMaxValue()
+        public T MaxMethod()
         {
-            var output = MaximumCheck();
-            Console.WriteLine("Maximum value: " + output);
+            var max = MaxValue(this.value);
+            return max;
         }
+
     }
 }
