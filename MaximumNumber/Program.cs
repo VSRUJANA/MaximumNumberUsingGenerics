@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Security.Cryptography;
 
 namespace MaximumNumber
 {
@@ -6,6 +7,30 @@ namespace MaximumNumber
     {
         static void Main(string[] args)
         {
+            //Generic Class
+            Console.WriteLine("Welcome to find Maximum number Program!");
+            Console.WriteLine("\nEnter 3 integer Numbers");
+            int i1 = int.Parse(Console.ReadLine());
+            int i2 = int.Parse(Console.ReadLine());
+            int i3 = int.Parse(Console.ReadLine());
+            GenericMaxCheck<int> genericInt = new GenericMaxCheck<int>(i1, i2, i3);
+            genericInt.PrintMaxValue();
+            Console.WriteLine("\nEnter 3 float Numbers");
+            float f1 = float.Parse(Console.ReadLine());
+            float f2 = float.Parse(Console.ReadLine());
+            float f3 = float.Parse(Console.ReadLine());
+            GenericMaxCheck<float> genericFloat = new GenericMaxCheck<float>(f1,f2,f3);
+            genericFloat.PrintMaxValue(); 
+            Console.WriteLine("\nEnter 3 Strings");
+            string s1 = Console.ReadLine();
+            string s2 = Console.ReadLine();
+            string s3 = Console.ReadLine();
+            GenericMaxCheck<string> genericString = new GenericMaxCheck<string>(s1,s2,s3);
+            genericString.PrintMaxValue();
+           
+
+            //Using Generic Method
+            /*
             Console.WriteLine("Welcome to find Maximum number Program!");
             Console.WriteLine("\nEnter 3 integer Numbers");
             int i1 = int.Parse(Console.ReadLine());
@@ -22,7 +47,9 @@ namespace MaximumNumber
             string s2 = Console.ReadLine();
             string s3 = Console.ReadLine();
             FindMaxNumber.MaximumCheck<string>(s1,s2,s3);
-            
+            */
+
+            //Using different methods
             /*
             Console.WriteLine("Enter 3 integer Numbers");
             int i1 = int.Parse(Console.ReadLine());

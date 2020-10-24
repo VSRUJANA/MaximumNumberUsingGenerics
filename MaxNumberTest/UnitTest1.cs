@@ -102,5 +102,40 @@ namespace MaxNumberTest
             Assert.AreEqual(expected, result);
         }
 
+        //Test methods for Generic method
+       
+        [TestMethod]
+        [DataRow(9, 14, 8)]
+        [DataRow(65, 99, 74)]
+        public void GivenMaxValueAtSecondPlace_GenericMethodForInt_ShouldReturnSecondValue(int num1, int num2, int num3)
+        {
+            GenericMaxCheck<int> generic = new GenericMaxCheck<int>(num1, num2, num3);
+            int expected = num2;
+            int actual = generic.MaximumCheck();
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        [DataRow(14.23F, 8.36F, 99.99F)]
+        [DataRow(65.36F, 9.56F, 74.56F)]
+        public void GivenMaxValueAtThirdPlace_GenericMethodForFloat_ShouldReturnThirdValue(float num1, float num2, float num3)
+        {
+            GenericMaxCheck<float> generic = new GenericMaxCheck<float>(num1, num2, num3);
+            float expected = num3;
+            float actual = generic.MaximumCheck();
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        [DataRow("9", "4", "93")]
+        [DataRow("43", "32", "58")]
+        public void GivenMaxValueAtFirstPlace_GenericMethodForString_ShouldReturnFirstValue(string num1, string num2, string num3)
+        {
+
+            GenericMaxCheck<string> generic = new GenericMaxCheck<string>(num1, num2, num3);
+            string expected = num3;
+            string actual = generic.MaximumCheck();
+            Assert.AreEqual(expected, actual);
+        }
     }
 }

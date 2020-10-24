@@ -89,38 +89,5 @@ namespace MaximumNumber
                 return null;
             }
         }
-
-        public static void MaximumCheck<T>(T firstValue, T secondValue, T thirdValue) where T : IComparable
-        {
-            try
-            {
-                if (firstValue.CompareTo(secondValue) > 0 && firstValue.CompareTo(thirdValue) > 0 ||
-                    firstValue.CompareTo(secondValue) >= 0 && firstValue.CompareTo(thirdValue) > 0 ||
-                    firstValue.CompareTo(secondValue) > 0 && firstValue.CompareTo(thirdValue) >= 0)
-                {
-                    Console.WriteLine("Maximum value: " + firstValue);
-                    return;
-                }
-                if (secondValue.CompareTo(firstValue) > 0 && secondValue.CompareTo(thirdValue) > 0 ||
-                    secondValue.CompareTo(firstValue) >= 0 && secondValue.CompareTo(thirdValue) > 0 ||
-                    secondValue.CompareTo(firstValue) > 0 && secondValue.CompareTo(thirdValue) >= 0)
-                {
-                    Console.WriteLine("Maximum value: " + secondValue);
-                    return;
-                }
-                if (thirdValue.CompareTo(secondValue) > 0 && thirdValue.CompareTo(firstValue) > 0 ||
-                    thirdValue.CompareTo(secondValue) >= 0 && thirdValue.CompareTo(firstValue) > 0 ||
-                    thirdValue.CompareTo(secondValue) > 0 && thirdValue.CompareTo(firstValue) >= 0)
-                {
-                    Console.WriteLine("Maximum value: " + thirdValue);
-                    return;
-                }
-                throw new Exception("first value,second value and third value are same");
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e.Message);
-            }
-        }
     }
 }
