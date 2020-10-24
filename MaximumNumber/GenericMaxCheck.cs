@@ -17,6 +17,7 @@ namespace MaximumNumber
             this.thirdValue = thirdValue;
         }
 
+        //Generic method to find Maximum
         public T MaximumCheck()
         {
             try
