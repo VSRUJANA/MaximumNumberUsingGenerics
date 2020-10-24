@@ -9,14 +9,14 @@ namespace MaximumNumber
         {
             //Generic Class
             int[] intArray = { 112, 344, 432, 555, 678 };
-            GenericMaxCheck<int> genericInt = new GenericMaxCheck<int>(intArray);
-            Console.WriteLine("Maximum Integer : " + genericInt.MaxMethod());
+            GenericMaxCheck<int> generic = new GenericMaxCheck<int>(intArray);
+            generic.PrintMaxValue();
             double[] doubleArray = { 11.2, 34.4, 4.32, 55.5, 6.78 };
             GenericMaxCheck<double> genericDouble = new GenericMaxCheck<double>(doubleArray);
-            Console.WriteLine("Maximum Double  : " + genericDouble.MaxMethod());
+            genericDouble.PrintMaxValue();
             string[] stringArray = { "111", "222", "333", "55", "999" };
             GenericMaxCheck<string> genericString = new GenericMaxCheck<string>(stringArray);
-            Console.WriteLine("Maximum String  : " + genericString.MaxMethod());
+            genericString.PrintMaxValue();
 
             //Using Generic Method
             /*
